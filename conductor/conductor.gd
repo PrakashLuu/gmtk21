@@ -51,7 +51,7 @@ func start_music():
 func closest_beat(nth):
 	var closest = int(round((song_cur_pos * BPS) / nth) * nth) 
 	var time_off_beat = abs(closest * SPB - song_cur_pos)
-	return Vector2(closest, time_off_beat)
+	return [closest, time_off_beat]
 	
 	
 func play_from_beat(beat, offset):
@@ -69,11 +69,12 @@ func on_time():
 		
 	var result = closest_beat(1)
 	
-	if result[1] > BEAT_INPUT_CUTOFF:
+	var big_sad_input = result[1] > BEAT_INPUT_CUTOFF
+	if big_sad_input:
 		if not you_are_dummy_bad_at_rhythm():
 			sfx.play()
 		quiet_until_beat = song_cur_beat + NUM_QUIET_BEATS
 	
-	return result[1]
+	return [result[0], result[1], big_sad_input]
 	
 	# TODO(arjun): implement lmao
