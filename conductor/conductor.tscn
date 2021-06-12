@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://conductor/conductor.gd" type="Script" id=1]
+[ext_resource path="res://sfx/beat_missed.wav" type="AudioStream" id=2]
 
 [node name="Conductor" type="AudioStreamPlayer"]
 script = ExtResource( 1 )
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
