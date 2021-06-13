@@ -1,0 +1,106 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://sprites/DinoSprites - mort.png" type="Texture" id=1]
+[ext_resource path="res://actors/dinomation.gd" type="Script" id=2]
+[ext_resource path="res://actors/dinopos.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "bigsad"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("dino:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 13, 14, 15, 16 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "idle"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("dino:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "kick"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("dino:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 10, 11, 12 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "move"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("dino:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "sprint"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("dino:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 18, 19, 20, 21, 22, 23 ]
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="animationplayer" type="AnimationPlayer" parent="."]
+anims/bigsad = SubResource( 1 )
+anims/idle = SubResource( 2 )
+anims/kick = SubResource( 3 )
+anims/move = SubResource( 4 )
+anims/sprint = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="dino" type="Sprite" parent="."]
+scale = Vector2( 5, 5 )
+texture = ExtResource( 1 )
+hframes = 24
