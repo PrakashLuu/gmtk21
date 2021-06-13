@@ -81,4 +81,7 @@ layer = 2
 
 [node name="Spawner" type="Node2D" parent="ObstacleLayer"]
 script = ExtResource( 3 )
-g_obstacle_path = "res://actors/AnimatedSprite.tscn"
+g_obstacle_path = "res://actors/doux.tscn"
+g_obstacle_path_2 = "res://actors/mort.tscn"
+g_obstacle_path_3 = "res://actors/tard.tscn"
+g_obstacle_path_4 = "res://actors/vita.tscn"

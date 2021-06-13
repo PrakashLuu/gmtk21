@@ -35,4 +35,3 @@ __meta__ = {
 format = 1
 
 [node name="AnimatedSprite" parent="." instance=ExtResource( 4 )]
-frame = 0
