@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://sprites/bg/high_cloud.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Background.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Spawner.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Main.gd" type="Script" id=4]
+[ext_resource path="res://sprites/bg/low_cloud.png" type="Texture" id=5]
+[ext_resource path="res://sprites/bg/foreground.png" type="Texture" id=6]
+[ext_resource path="res://sprites/bg/sky.png" type="Texture" id=7]
+[ext_resource path="res://sprites/bg/hills.png" type="Texture" id=8]
+[ext_resource path="res://conductor/conductor.tscn" type="PackedScene" id=9]
+[ext_resource path="res://songs/Persona_4_Great_Success_140BPM.mp3" type="AudioStream" id=10]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="WorldLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="Sprite" parent="WorldLayer"]
+scale = Vector2( 5, 5 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="HighCloud2" type="Sprite" parent="WorldLayer"]
+position = Vector2( 1440, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 1 )
+centered = false
+script = ExtResource( 2 )
+
+[node name="HighCloud1" type="Sprite" parent="WorldLayer"]
+scale = Vector2( 5, 5 )
+texture = ExtResource( 1 )
+centered = false
+script = ExtResource( 2 )
+
+[node name="LowCloud2" type="Sprite" parent="WorldLayer"]
+position = Vector2( 1440, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 5 )
+centered = false
+script = ExtResource( 2 )
+
+[node name="LowCloud1" type="Sprite" parent="WorldLayer"]
+scale = Vector2( 5, 5 )
+texture = ExtResource( 5 )
+centered = false
+script = ExtResource( 2 )
+
+[node name="Hills2" type="Sprite" parent="WorldLayer"]
+position = Vector2( 1440, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 8 )
+centered = false
+script = ExtResource( 2 )
+
+[node name="Hills1" type="Sprite" parent="WorldLayer"]
+scale = Vector2( 5, 5 )
+texture = ExtResource( 8 )
+centered = false
+script = ExtResource( 2 )
+
+[node name="Foreground2" type="Sprite" parent="WorldLayer"]
+position = Vector2( 1440, 0 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 6 )
+centered = false
+script = ExtResource( 2 )
+
+[node name="Foreground1" type="Sprite" parent="WorldLayer"]
+scale = Vector2( 5, 5 )
+texture = ExtResource( 6 )
+centered = false
+script = ExtResource( 2 )
+
+[node name="Conductor" parent="." instance=ExtResource( 9 )]
+stream = ExtResource( 10 )
+
+[node name="ObstacleLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Spawner" type="Node2D" parent="ObstacleLayer"]
+script = ExtResource( 3 )
+g_obstacle_path = "res://actors/Obstacle.tscn"

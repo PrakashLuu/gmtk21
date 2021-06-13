@@ -78,3 +78,6 @@ func on_time():
 	return [result[0], result[1], big_sad_input]
 	
 	# TODO(arjun): implement lmao
+
+func get_bpm() -> int:
+	return BPM
