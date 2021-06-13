@@ -7,8 +7,8 @@ func _ready():
 	var ms_per_beat = 60000.0 / bpm
 	
 	$Conductor.start_music()
-	$ObstacleLayer/Spawner.set_velocity(velocity)
-	$ObstacleLayer/Spawner.set_spawn_time(ms_per_beat * 4)
+	$ObstacleLayer/Spawner.set_velocity(velocity * 40)
+	$ObstacleLayer/Spawner.set_spawn_time(ms_per_beat * 1)
 	
 	# There's almost certainly a better way to do a parallax, but here's my bad implementation
 	$WorldLayer/HighCloud1.set_velocity(velocity * 0.5)
