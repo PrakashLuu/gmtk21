@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 	var time_diff = OS.get_system_time_msecs() - g_last_spawn_time_ms
 	if time_diff > g_spawn_time_ms:
 		var object : Node2D = g_obstacle_resource.instance()
-		object.global_position = Vector2(g_viewport_width, 600)
+		object.global_position = Vector2(g_viewport_width,  randf() * 800)
 		# The 100 is for where the object gets destroyed (see Obstacle.gd)
 		object.start((g_viewport_width - 100) / -10.0 * 4)
 		get_parent().call_deferred('add_child_below_node', self, object)

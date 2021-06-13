@@ -26,8 +26,3 @@ func _input(event):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_AnimatedSprite_animation_finished():
-	if player.animation == 'big sad':
-		player.play('stand')
